@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { siteConfig } from "@/config/site";
+import { Toaster } from "sonner";
 
 import "./globals.css";
 
@@ -30,6 +31,8 @@ export default function RootLayout({
         className={`${manrope.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
       >
         {children}
+
+        <Toaster richColors />
       </body>
     </html>
   );

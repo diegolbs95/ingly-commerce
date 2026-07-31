@@ -7,7 +7,9 @@ export const siteConfig = {
   url: "https://inglycommerce.com.br",
 
   links: {
-    instagram: "",
-    whatsapp: "",
+    instagram: "https://instagram.com/inglyjeans",
+    whatsapp: "5581973251108",
+    address:
+      "Santa Cruz do Capibaribe • Pernambuco",
   },
 } as const;
