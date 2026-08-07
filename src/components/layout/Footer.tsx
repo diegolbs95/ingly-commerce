@@ -9,11 +9,18 @@ import { Container } from "./Container";
 
 export function Footer() {
     return (
-        <footer className="mt-32 border-t bg-secondary/30">
+        <footer
+        className="
+            mt-16
+            border-t
+            bg-secondary/30
+            lg:mt-32
+        "
+        >
 
             <Container>
 
-                <div className="grid gap-12 py-16 md:grid-cols-3">
+                <div className="py-12 lg:py-16">
 
                     {/* Marca */}
 
@@ -27,7 +34,14 @@ export function Footer() {
                             JEANS
                         </p>
 
-                        <p className="mt-5 leading-7 text-muted-foreground">
+                        <p
+                            className="
+                                mt-4
+                                leading-7
+                                text-muted-foreground
+                                mt-4 lg:mt-5
+                            "
+                        >
                             Elegância em cada detalhe.
                             Desenvolvemos jeans para mulheres
                             que buscam conforto, autenticidade
@@ -36,93 +50,103 @@ export function Footer() {
 
                     </div>
 
-                    {/* Navegação */}
+                    <div
+                        className="
+                        mt-10
+                        grid
+                        grid-cols-2
+                        gap-8
+                        lg:mt-0
+                        lg:grid-cols-2
+                    "
+                    >
+                        {/* Navegação */}
 
-                    <div>
+                        <div>
 
-                        <h3 className="text-lg font-semibold">
-                            Institucional
-                        </h3>
+                            <h3 className="text-lg font-semibold">
+                                Institucional
+                            </h3>
 
-                        <ul className="mt-5 space-y-3">
+                            <ul className="mt-4 lg:mt-5 space-y-3">
 
-                            <li>
+                                <li>
 
-                                <Link
-                                    href="/"
-                                    className="text-muted-foreground transition-colors hover:text-foreground"
-                                >
-                                    Início
-                                </Link>
+                                    <Link
+                                        href="/"
+                                        className="text-muted-foreground transition-colors hover:text-foreground"
+                                    >
+                                        Início
+                                    </Link>
 
-                            </li>
+                                </li>
 
-                            <li>
+                                <li>
 
-                                <Link
-                                    href="/catalogo"
-                                    className="text-muted-foreground transition-colors hover:text-foreground"
-                                >
-                                    Catálogo
-                                </Link>
+                                    <Link
+                                        href="/catalogo"
+                                        className="text-muted-foreground transition-colors hover:text-foreground"
+                                    >
+                                        Catálogo
+                                    </Link>
 
-                            </li>
+                                </li>
 
-                            <li>
+                                <li>
 
-                                <Link
-                                    href="/novidades"
-                                    className="text-muted-foreground transition-colors hover:text-foreground"
-                                >
-                                    Novidades
-                                </Link>
+                                    <Link
+                                        href="/novidades"
+                                        className="text-muted-foreground transition-colors hover:text-foreground"
+                                    >
+                                        Novidades
+                                    </Link>
 
-                            </li>
+                                </li>
 
-                        </ul>
-
-                    </div>
-
-                    {/* Contato */}
-
-                    <div>
-
-                        <h3 className="text-lg font-semibold">
-                            Fale Conosco
-                        </h3>
-
-                        <div className="mt-5 space-y-4">
-
-                            <a
-                                href="https://wa.me/55SEUNUMERO"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground"
-                            >
-
-                                <MessageCircle className="h-5 w-5" />
-
-                                WhatsApp
-
-                            </a>
-
-                            <a
-                                href="https://instagram.com/inglyjeans"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground"
-                            >
-
-                                <Camera className="h-5 w-5" />
-
-                                @inglyjeans
-
-                            </a>
+                            </ul>
 
                         </div>
 
-                    </div>
+                        {/* Contato */}
 
+                        <div>
+
+                            <h3 className="text-lg font-semibold">
+                                Fale Conosco
+                            </h3>
+
+                            <div className="mt-4 lg:mt-5 space-y-4">
+
+                                <a
+                                    href="https://wa.me/55SEUNUMERO"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground"
+                                >
+
+                                    <MessageCircle className="h-5 w-5" />
+
+                                    WhatsApp
+
+                                </a>
+
+                                <a
+                                    href="https://instagram.com/inglyjeans"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground"
+                                >
+
+                                    <Camera className="h-5 w-5" />
+
+                                    @inglyjeans
+
+                                </a>
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
                 <div className="border-t py-8 text-center">

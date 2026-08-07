@@ -18,8 +18,8 @@ const categories = [
   "Todos",
   "Calças",
   "Shorts",
-  "Jaquetas",
-  "Camisas",
+  "Partes de Cima",
+  "Bermudas",
 ];
 
 interface CatalogPageProps {
@@ -42,11 +42,11 @@ export function CatalogPage({
       case "shorts":
         return "Shorts";
 
-      case "jaquetas":
-        return "Jaquetas";
+      case "partes-de-cima":
+        return "Partes de Cima";
 
-      case "camisas":
-        return "Camisas";
+      case "bermudas":
+        return "Bermudas";
 
       default:
         return "Todos";
@@ -65,6 +65,7 @@ export function CatalogPage({
     const slug = category
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, "-")
       .toLowerCase();
 
     router.push(

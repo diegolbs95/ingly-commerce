@@ -1,8 +1,8 @@
 export const categories = [
   "Calças",
   "Shorts",
-  "Jaquetas",
-  "Camisas",
+  "Partes de Cima",
+  "Bermudas",
 ] as const;
 
 export const collections = [

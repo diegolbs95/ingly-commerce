@@ -68,11 +68,11 @@ export function ProductPage({
     <Page>
       <Header />
 
-      <main className="py-16">
+      <main className="py-12 lg:py-16">
 
         <Container>
 
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
             <ProductGallery
               name={product.name}
               images={[
@@ -86,13 +86,28 @@ export function ProductPage({
 
             <div>
 
-              <h1 className="text-4xl font-bold">
+              <h1
+                className="
+                  text-2xl
+                  font-bold
+                  leading-tight
+                  lg:text-4xl
+                "
+              >
                 {product.name}
               </h1>
 
               <p className="mt-2 text-sm text-muted-foreground">
                 Ref.: {product.reference}
               </p>
+
+              {product.composition && (
+
+                <p className="mt-2 text-sm text-muted-foreground">
+                    Composição: {product.composition}
+                </p>
+
+              )}
 
               <div
                 className="
@@ -109,7 +124,8 @@ export function ProductPage({
 
                 <p
                   className="
-                    text-4xl
+                    text-2xl
+                    lg:text-4xl
                     font-bold
                     tracking-tight
                   "
@@ -127,7 +143,8 @@ export function ProductPage({
 
                   <p
                     className="
-                      text-2xl
+                      text-xl
+                      lg:text-2xl
                       font-semibold
                       text-wholesale
                     "
@@ -162,17 +179,26 @@ export function ProductPage({
 
               )}
 
-              <p className="mt-8 leading-8 text-muted-foreground">
+              <p className="
+                  mt-6
+                  text-sm
+                  leading-7
+                  text-muted-foreground
+                  lg:mt-8
+                  lg:text-base
+                  lg:leading-8
+                "
+              >
                 {product.description}
               </p>
 
-              <div className="mt-10">
+              <div className="mt-8 lg:mt-10">
 
-                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+                <h3 className="mb-4 text-xs lg:text-sm font-semibold uppercase tracking-wider">
                   Escolha o tamanho
                 </h3>
 
-                <div className="flex gap-3">
+                <div className="flex gap-2 lg:gap-3">
 
                   {sizes.map((size) => (
                     <Button
@@ -180,8 +206,11 @@ export function ProductPage({
                       variant="outline"
                       onClick={() => setSelectedSize(size)}
                       className={`
-                        h-12
-                        min-w-12
+                        h-11
+                        min-w-11
+                        text-sm
+                        lg:h-12
+                        lg:min-w-12
                         transition-all
                         duration-200
                         ${selectedSize === size
@@ -203,13 +232,13 @@ export function ProductPage({
                   Quantidade
                 </h3>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
 
                   <Button
                     type="button"
                     variant="outline"
                     size="icon"
-                    className="h-12 w-12"
+                    className="h-11 w-11 lg:h-12 lg:w-12"
                     disabled={quantity === 1}
                     onClick={() =>
                       setQuantity((value) =>
@@ -220,7 +249,7 @@ export function ProductPage({
                     −
                   </Button>
 
-                  <span className="w-12 text-center text-xl font-bold">
+                  <span className="w-12 text-center text-lg lg:text-xl font-bold">
                     {quantity}
                   </span>
 
@@ -228,7 +257,12 @@ export function ProductPage({
                     type="button"
                     variant="outline"
                     size="icon"
-                    className="h-12 w-12"
+                    className="
+                      h-11
+                      w-11
+                      lg:h-12
+                      lg:w-12
+                    "
                     onClick={() =>
                       setQuantity((value) => value + 1)
                     }
@@ -241,7 +275,13 @@ export function ProductPage({
 
               <Button
                 size="lg"
-                className="mt-10 h-12 w-full"
+                className="
+                  mt-8
+                  h-11
+                  w-full
+                  lg:mt-10
+                  lg:h-12
+                "
                 disabled={!selectedSize}
                 onClick={
                   handleAddToCart
@@ -249,7 +289,15 @@ export function ProductPage({
               >
                 Adicionar à Sacola
               </Button>
-              <p className="mt-4 text-center text-sm text-muted-foreground">
+              <p className="
+                  mt-3
+                  text-center
+                  text-xs
+                  text-muted-foreground
+                  lg:mt-4
+                  lg:text-sm
+                "
+              >
                 Escolha o tamanho e a quantidade antes de adicionar à sacola.
               </p>
 

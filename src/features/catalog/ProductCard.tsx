@@ -45,7 +45,7 @@ export function ProductCard({
         <div
           className="
             relative
-            aspect-[3/4]
+            aspect-square
             overflow-hidden
             bg-secondary
           "
@@ -79,61 +79,61 @@ export function ProductCard({
           />
         </div>
 
-        <div
-          className="
-            flex
-            flex-1
-            flex-col
-            p-6
-          "
-        >
+          <div
+            className="
+              flex
+              flex-col
+              p-3
+              lg:p-6
+            "
+          >
           <h3
             className="
-              mb-3
-              text-[1.15rem]
+              mb-1
+              text-base
               font-semibold
               leading-tight
               tracking-tight
               transition-colors
               duration-300
               group-hover:text-primary
+              lg:mb-3
+              lg:text-[1.15rem]
             "
           >
             {product.name}
           </h3>
 
-          <p
-            className="
-              flex-1
-              line-clamp-3
-              text-sm
-              leading-6
-              text-muted-foreground
-            "
-          >
-            {product.description}
-          </p>
-
           {/* Preços */}
 
           <div
             className="
-    mt-5
-    border-t
-    border-border/30
-    pt-4
-  "
+              mt-5
+              border-t
+              border-border/30
+              pt-4
+            "
           >
 
-            <div className="flex items-center justify-between gap-4">
+            <div
+              className="
+                flex
+                flex-col
+                gap-2
+                sm:flex-row
+                sm:items-center
+                sm:justify-between
+              "
+            >
 
               <span
                 className="
-        text-xl
-        font-semibold
-        tracking-tight
-        text-foreground
-      "
+                  text-lg
+                  font-semibold
+                  tracking-tight
+                  text-foreground
+                  lg:text-xl
+                "
               >
                 {product.price.toLocaleString("pt-BR", {
                   style: "currency",
@@ -145,9 +145,10 @@ export function ProductCard({
 
                 <span
                   className="
-                    text-lg
+                    text-base
                     font-medium
                     text-wholesale
+                    lg:text-lg
                   "
                 >
                   <span className="font-bold">

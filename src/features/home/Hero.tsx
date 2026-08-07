@@ -35,15 +35,22 @@ export function Hero() {
               Nova Coleção
             </span>
 
-            <h1 className="mt-8 text-5xl font-extrabold leading-[1.05] lg:text-7xl">
+            <h1
+              className="
+                mt-8
+                text-4xl
+                font-extrabold
+                leading-[1.08]
+                sm:text-5xl
+                lg:text-7xl
+              "
+            >
 
-              Jeans feitos
+              Jeans feitos para
               <br />
-              para mulheres
+              mulheres que
               <br />
-              que marcam
-              <br />
-              presença.
+              marcam presença.
 
             </h1>
 

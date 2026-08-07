@@ -45,18 +45,22 @@ export function CartItem({
       className="
         flex
         flex-col
-        gap-6
+        gap-5
         rounded-2xl
         border
-        p-6
+        p-5
         sm:flex-row
+        lg:gap-6
+        lg:p-6
       "
     >
       <div
         className="
           relative
-          h-36
-          w-28
+          h-28
+          w-20
+          sm:h-36
+          sm:w-28
           overflow-hidden
           rounded-xl
           border
@@ -74,7 +78,7 @@ export function CartItem({
 
       <div className="flex flex-1 flex-col justify-between">
         <div>
-          <h3 className="text-xl font-semibold">
+          <h3 className="text-lg lg:text-xl font-semibold">
             {item.name}
           </h3>
 
@@ -89,7 +93,7 @@ export function CartItem({
           <p
             className={
               wholesale
-                ? "mt-3 text-sm font-medium text-wholesale"
+                ? "mt-3 text-sm font-medium text-emerald-700"
                 : "mt-3 text-sm text-muted-foreground"
             }
           >
@@ -98,7 +102,13 @@ export function CartItem({
               : "Valor Unitário"}
           </p>
 
-          <p className="font-semibold">
+          <p
+            className={
+              wholesale
+                ? "text-lg font-bold text-emerald-700"
+                : "text-lg font-semibold"
+            }
+          >
             {unitPrice.toLocaleString(
               "pt-BR",
               {
@@ -112,7 +122,7 @@ export function CartItem({
             Subtotal
           </p>
 
-          <p className="text-lg font-semibold">
+          <p className="text-base lg:text-lg font-semibold">
             {(unitPrice * item.quantity).toLocaleString(
               "pt-BR",
               {
@@ -123,8 +133,8 @@ export function CartItem({
           </p>
         </div>
 
-        <div className="mt-6 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="mt-5 lg:mt-6 flex items-center justify-between">
+          <div className="flex items-center gap-2 lg:gap-3">
             <Button
               size="icon"
               variant="outline"
@@ -139,7 +149,7 @@ export function CartItem({
               <Minus className="h-4 w-4" />
             </Button>
 
-            <span className="w-10 text-center text-lg font-semibold">
+            <span className="w-10 text-center text-base lg:text-lg font-semibold">
               {item.quantity}
             </span>
 

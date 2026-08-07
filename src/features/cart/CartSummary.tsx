@@ -49,7 +49,8 @@ export function CartSummary({
         rounded-2xl
         border
         bg-background
-        p-6
+        p-5
+        lg:p-6
         lg:sticky
         lg:top-24
       "
@@ -58,7 +59,7 @@ export function CartSummary({
         Resumo do Pedido
       </h2>
 
-      <div className="mt-6 space-y-5">
+      <div className="mt-5 space-y-4 lg:mt-6 lg:space-y-5">
         <div className="flex items-center justify-between">
           <span className="text-muted-foreground">
             Itens
@@ -91,7 +92,7 @@ export function CartSummary({
               Total
             </span>
 
-            <span className="text-2xl font-bold">
+            <span className="text-xl lg:text-2xl font-bold">
               {subtotal.toLocaleString(
                 "pt-BR",
                 {
@@ -110,8 +111,8 @@ export function CartSummary({
               mt-4
               rounded-lg
               border
-              border-wholesale/20
-              bg-wholesale/5
+              border-emerald-200
+              bg-emerald-50
               px-4
               py-3
             "
@@ -121,7 +122,7 @@ export function CartSummary({
               className="
                 text-sm
                 font-semibold
-                text-wholesale
+                text-emerald-700
               "
             >
               ✓ Preço de atacado aplicado.
@@ -166,11 +167,11 @@ export function CartSummary({
         )}
       </div>
 
-      <div className="mt-8 rounded-xl bg-secondary p-4 text-sm text-muted-foreground">
+      <div className="mt-6 lg:mt-8 rounded-xl bg-secondary p-4 text-sm text-muted-foreground">
         O frete será informado durante o atendimento pelo WhatsApp.
       </div>
 
-      <div className="mt-8 space-y-3">
+      <div className="mt-6 lg:mt-8 space-y-3">
         <Button
           asChild
           variant="outline"

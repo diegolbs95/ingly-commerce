@@ -7,6 +7,8 @@ export const productSchema = z.object({
 
   description: z.string().trim().min(10, "Descrição muito curta."),
 
+  composition: z.string().trim().optional(),
+
   image: z.string().url("Informe uma URL válida."),
 
   image2: z.string().url().optional().or(z.literal("")),

@@ -27,14 +27,14 @@ export function CartPage() {
             <Page>
                 <Header />
 
-                <main className="flex-1 py-16">
+                <main className="flex-1 py-12 lg:py-16">
                     <Container>
                         <SectionTitle
                             title="Sacola"
                             subtitle="Sua sacola está vazia."
                         />
 
-                        <div className="mt-12 flex flex-col items-center gap-6 rounded-2xl border border-dashed py-20">
+                        <div className="mt-10 flex flex-col items-center gap-5 rounded-2xl border border-dashed py-14 lg:mt-12 lg:gap-6 lg:py-20">
 
                             <p className="max-w-sm text-center text-muted-foreground">
                                 Escolha seus produtos favoritos e monte sua sacola para finalizar o pedido pelo WhatsApp.

@@ -12,6 +12,8 @@ model Product {
 
   reference String
 
+  composition String?
+
   name        String
 
   slug        String   @unique

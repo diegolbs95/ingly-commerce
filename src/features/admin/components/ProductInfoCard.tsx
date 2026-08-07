@@ -66,6 +66,22 @@ export function ProductInfoCard({
 
       </div>
 
+      {product.composition && (
+
+        <div className="mt-8">
+
+          <h2 className="mb-3 text-lg font-semibold">
+            Composição
+          </h2>
+
+          <p className="text-muted-foreground">
+            {product.composition}
+          </p>
+
+        </div>
+
+      )}
+
       <div className="mt-8">
 
         <h2 className="mb-3 text-lg font-semibold">

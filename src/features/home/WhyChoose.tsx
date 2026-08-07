@@ -30,7 +30,14 @@ const items = [
 
 export function WhyChoose() {
     return (
-        <section className="border-y bg-secondary/30 py-24">
+        <section
+            className="
+                border-y
+                bg-secondary/30
+                py-16
+                lg:py-24
+            "
+        >
             <Container>
 
                 <SectionTitle
@@ -38,7 +45,16 @@ export function WhyChoose() {
                     subtitle="Mais do que vestir, queremos entregar qualidade, confiança e elegância em cada detalhe."
                 />
 
-                <div className="mt-16 grid gap-8 md:grid-cols-3">
+                <div
+                className="
+                    mt-10
+                    grid
+                    gap-5
+                    md:grid-cols-3
+                    lg:mt-16
+                    lg:gap-8
+                "
+                >
 
                     {items.map((item) => {
                         const Icon = item.icon;
@@ -51,7 +67,8 @@ export function WhyChoose() {
                                     border
                                     border-border/60
                                     bg-background
-                                    p-8
+                                    p-5
+                                    lg:p-8
                                     shadow-sm
                                     transition-all
                                     duration-300
@@ -62,29 +79,49 @@ export function WhyChoose() {
                             >
 
                                 <div
-                                    className="
-                                        mb-6
-                                        flex
-                                        h-16
-                                        w-16
-                                        items-center
-                                        justify-center
-                                        rounded-full
-                                        bg-primary
-                                        text-primary-foreground
-                                        shadow-sm
-                                    "
+                                className="
+                                    mb-4
+                                    flex
+                                    h-12
+                                    w-12
+                                    items-center
+                                    justify-center
+                                    rounded-full
+                                    bg-primary
+                                    text-primary-foreground
+                                    shadow-sm
+                                    lg:mb-6
+                                    lg:h-16
+                                    lg:w-16
+                                "
                                 >
 
-                                    <Icon className="h-8 w-8" />
+                                    <Icon className="h-6 w-6 lg:h-8 lg:w-8" />
 
                                 </div>
 
-                                <h3 className="text-xl font-bold tracking-tight">
+                                <h3
+                                className="
+                                    text-lg
+                                    font-bold
+                                    tracking-tight
+                                    lg:text-xl
+                                "
+                                >
                                     {item.title}
                                 </h3>
 
-                                <p className="mt-4 text-[15px] leading-7 text-muted-foreground">
+                                <p
+                                className="
+                                    mt-3
+                                    text-sm
+                                    leading-6
+                                    text-muted-foreground
+                                    lg:mt-4
+                                    lg:text-[15px]
+                                    lg:leading-7
+                                "
+                                >
                                     {item.description}
                                 </p>
 

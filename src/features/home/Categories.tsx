@@ -16,27 +16,44 @@ const categories = [
     href: "/catalogo?categoria=shorts",
   },
   {
-    name: "Jaquetas",
+    name: "Partes de Cima",
     image: "/images/categories/jaquetas.jpg",
-    href: "/catalogo?categoria=jaquetas",
+    href: "/catalogo?categoria=partes-de-cima",
   },
   {
-    name: "Camisas",
-    image: "/images/categories/camisas.jpg",
-    href: "/catalogo?categoria=camisas",
+    name: "Bermudas",
+    image: "/images/categories/bermuda.jpg",
+    href: "/catalogo?categoria=bermudas",
   },
 ];
 
 export function Categories() {
   return (
-    <section className="py-20">
+    <section
+      className="
+        py-12
+        lg:py-20
+      "
+    >
       <Container>
 
         <SectionTitle
           title="Categorias"
         />
 
-        <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          className="
+            mt-12
+            grid
+            grid-cols-2
+            gap-4
+            sm:grid-cols-2
+            sm:gap-6
+            lg:mt-14
+            lg:grid-cols-4
+            lg:gap-7
+          "
+        >
 
           {categories.map((category) => (
             <Link
@@ -60,8 +77,9 @@ export function Categories() {
               <div
                 className="
                   relative
-                  aspect-[4/5]
+                  aspect-square
                   overflow-hidden
+                  lg:aspect-[4/5]
                 "
               >
 
@@ -95,15 +113,18 @@ export function Categories() {
                 <span
                   className="
                     absolute
-                    bottom-6
-                    left-6
-                    text-2xl
+                    bottom-3
+                    left-3
+                    text-base
                     font-bold
                     tracking-tight
                     text-white
                     transition-transform
                     duration-300
                     group-hover:translate-x-1
+                    lg:bottom-6
+                    lg:left-6
+                    lg:text-2xl
                   "
                 >
                   {category.name}

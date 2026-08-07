@@ -138,25 +138,8 @@ export function ProductRow({
             <p className="text-xs text-muted-foreground">
               Ref.: {product.reference}
             </p>
-
-            <p className="text-sm text-muted-foreground">
-              {product.category}
-            </p>
-
-            <p className="text-xs text-muted-foreground">
-              {product.collection}
-            </p>
-
+            
           </div>
-
-          <p className="text-sm text-muted-foreground">
-            {product.category}
-          </p>
-
-          <p className="text-xs text-muted-foreground">
-            {product.collection}
-          </p>
-
         </div>
       </Link>
 

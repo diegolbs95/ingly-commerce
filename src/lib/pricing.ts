@@ -1,4 +1,4 @@
-export const WHOLESALE_MIN_ITEMS = 10;
+export const WHOLESALE_MIN_ITEMS = 6;
 
 export function hasWholesale(
   totalItems: number,

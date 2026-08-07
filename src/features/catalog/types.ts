@@ -3,6 +3,8 @@ export interface Product {
 
   reference: string;
 
+  composition: string | null;
+
   name: string;
 
   slug: string;

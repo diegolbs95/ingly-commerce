@@ -19,14 +19,30 @@ export async function FeaturedProducts() {
   }
 
   return (
-    <section className="py-20">
+    <section
+      className="
+        py-12
+        lg:py-20
+      "
+    >
       <Container>
 
         <SectionTitle
           title="Destaques da Coleção"
         />
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          className="
+            mt-12
+            grid
+            grid-cols-2
+            gap-4
+            sm:grid-cols-2
+            sm:gap-6
+            lg:grid-cols-4
+            lg:gap-8
+          "
+        >
 
           {products.map((product) => (
             <ProductCard
@@ -37,12 +53,20 @@ export async function FeaturedProducts() {
 
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div
+          className="
+            mt-8
+            flex
+            justify-center
+            lg:mt-12
+          "
+        >
 
           <Button
             asChild
             variant="outline"
             size="lg"
+            className="w-full sm:w-auto"
           >
             <Link href="/catalogo">
               Ver catálogo completo

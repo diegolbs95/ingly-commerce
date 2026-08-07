@@ -52,6 +52,7 @@ export function ProductForm({
       reference: product?.reference ?? "",
       name: product?.name ?? "",
       description: product?.description ?? "",
+      composition: product?.composition ?? "",
       image: product?.image ?? "",
       image2: product?.image2 ?? "",
       image3: product?.image3 ?? "",
@@ -135,6 +136,29 @@ export function ProductForm({
           <p className="text-sm text-destructive">
             {errors.description.message}
           </p>
+        )}
+
+      </div>
+
+      {/* Composição */}
+
+      <div className="space-y-2">
+
+        <label className="text-sm font-medium">
+          Composição
+        </label>
+
+        <Input
+          placeholder="Ex.: 98% Algodão • 2% Elastano"
+          {...register("composition")}
+        />
+
+        {errors.composition && (
+
+          <p className="text-sm text-destructive">
+            {errors.composition.message}
+          </p>
+
         )}
 
       </div>
@@ -236,20 +260,20 @@ export function ProductForm({
             Galeria do Produto
           </h3>
 
-            <div
-              className="
+          <div
+            className="
                 grid
                 justify-items-center
                 gap-8
                 sm:grid-cols-2
                 xl:grid-cols-3
               "
-            >
+          >
 
             {/* Imagem Principal */}
 
-              <div
-                className="
+            <div
+              className="
                   flex
                   w-full
                   max-w-[260px]
@@ -257,7 +281,7 @@ export function ProductForm({
                   items-center
                   space-y-3
                 "
-              >
+            >
 
               <label
                 className="
