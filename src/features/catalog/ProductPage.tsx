@@ -18,12 +18,19 @@ interface ProductPageProps {
   product: Product;
 }
 
-const sizes = [
+const numericSizes = [
   "36",
   "38",
   "40",
   "42",
-  "44"
+  "44",
+];
+
+const topSizes = [
+  "PP",
+  "P",
+  "M",
+  "G",
 ];
 
 export function ProductPage({
@@ -38,6 +45,11 @@ export function ProductPage({
     quantity,
     setQuantity,
   ] = useState(1);
+
+  const sizes =
+  product.category === "Partes de Cima"
+    ? topSizes
+    : numericSizes;
 
   const addItem =
     useCart((state) => state.addItem);
