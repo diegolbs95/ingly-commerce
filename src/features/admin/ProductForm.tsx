@@ -1,6 +1,10 @@
 "use client";
 
-import { Controller, useForm } from "react-hook-form";
+import {
+  Controller,
+  useForm,
+  useWatch,
+} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Button } from "@/components/ui/button";
@@ -48,11 +52,13 @@ export function ProductForm({
   } = useForm<ProductFormData>({
     resolver: zodResolver(productSchema),
 
+
     defaultValues: {
       reference: product?.reference ?? "",
       name: product?.name ?? "",
       description: product?.description ?? "",
       composition: product?.composition ?? "",
+      unavailableSizes: product?.unavailableSizes ?? [],
       image: product?.image ?? "",
       image2: product?.image2 ?? "",
       image3: product?.image3 ?? "",
@@ -67,6 +73,16 @@ export function ProductForm({
       active: product?.active ?? true,
     },
   });
+
+  const selectedCategory = useWatch({
+    control,
+    name: "category",
+  });
+
+  const sizes =
+    selectedCategory === "Partes de Cima"
+      ? ["PP", "P", "M", "G"]
+      : ["36", "38", "40", "42", "44"];
 
   return (
     <form
@@ -248,6 +264,76 @@ export function ProductForm({
           )}
 
         </div>
+
+      </div>
+
+      {/* Disponibilidade */}
+
+      <div className="space-y-3">
+
+        <div>
+          <h3 className="text-lg font-semibold">
+            Disponibilidade
+          </h3>
+
+          <p className="text-sm text-muted-foreground">
+            Tamanhos marcados com X não estarão disponíveis para compra.
+          </p>
+        </div>
+
+        <Controller
+          control={control}
+          name="unavailableSizes"
+          render={({ field }) => (
+            <div className="flex flex-wrap gap-2">
+              {sizes.map((size) => {
+                const unavailable =
+                  field.value.includes(size);
+
+                return (
+                  <button
+                    key={size}
+                    type="button"
+                    onClick={() => {
+                      if (unavailable) {
+                        field.onChange(
+                          field.value.filter(
+                            (value) => value !== size,
+                          ),
+                        );
+                        return;
+                      }
+
+                      field.onChange([
+                        ...field.value,
+                        size,
+                      ]);
+                    }}
+                    className={`
+                flex
+                h-11
+                min-w-11
+                items-center
+                justify-center
+                rounded-lg
+                border
+                px-3
+                text-sm
+                font-semibold
+                transition-all
+                ${unavailable
+                        ? "border-destructive bg-destructive text-white"
+                        : "border-border bg-background hover:border-primary"
+                      }
+              `}
+                  >
+                    {unavailable ? "X" : size}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        />
 
       </div>
 

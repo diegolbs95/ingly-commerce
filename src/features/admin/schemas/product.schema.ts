@@ -9,6 +9,8 @@ export const productSchema = z.object({
 
   composition: z.string().trim().optional(),
 
+  unavailableSizes: z.array(z.string()),
+
   image: z.string().url("Informe uma URL válida."),
 
   image2: z.string().url().optional().or(z.literal("")),

@@ -47,9 +47,12 @@ export function ProductPage({
   ] = useState(1);
 
   const sizes =
-  product.category === "Partes de Cima"
-    ? topSizes
-    : numericSizes;
+    product.category === "Partes de Cima"
+      ? topSizes
+      : numericSizes;
+
+  const isSizeUnavailable = (size: string) =>
+    product.unavailableSizes.includes(size);
 
   const addItem =
     useCart((state) => state.addItem);
@@ -58,6 +61,13 @@ export function ProductPage({
     if (!selectedSize) {
       toast.warning(
         "Selecione um tamanho antes de continuar.",
+      );
+      return;
+    }
+
+    if (isSizeUnavailable(selectedSize)) {
+      toast.warning(
+        "Esse tamanho está indisponível.",
       );
       return;
     }
@@ -116,7 +126,7 @@ export function ProductPage({
               {product.composition && (
 
                 <p className="mt-2 text-sm text-muted-foreground">
-                    Composição: {product.composition}
+                  Composição: {product.composition}
                 </p>
 
               )}
@@ -212,28 +222,35 @@ export function ProductPage({
 
                 <div className="flex gap-2 lg:gap-3">
 
-                  {sizes.map((size) => (
-                    <Button
-                      key={size}
-                      variant="outline"
-                      onClick={() => setSelectedSize(size)}
-                      className={`
-                        h-11
-                        min-w-11
-                        text-sm
-                        lg:h-12
-                        lg:min-w-12
-                        transition-all
-                        duration-200
-                        ${selectedSize === size
-                          ? "border-black bg-black text-white hover:bg-black hover:text-white"
-                          : "border-gray-300 bg-white text-black hover:border-black hover:bg-white"
-                        }
-                      `}
-                    >
-                      {size}
-                    </Button>
-                  ))}
+                  {sizes.map((size) => {
+                    const unavailable = isSizeUnavailable(size);
+
+                    return (
+                      <Button
+                        key={size}
+                        variant="outline"
+                        disabled={unavailable}
+                        onClick={() => setSelectedSize(size)}
+                        className={`
+                              h-11
+                              min-w-11
+                              text-sm
+                              lg:h-12
+                              lg:min-w-12
+                              transition-all
+                              duration-200
+                              ${unavailable
+                            ? "cursor-not-allowed border-gray-200 bg-gray-100 text-gray-400 opacity-70"
+                            : selectedSize === size
+                              ? "border-black bg-black text-white hover:bg-black hover:text-white"
+                              : "border-gray-300 bg-white text-black hover:border-black hover:bg-white"
+                          }
+                       `}
+                        >
+                        {size}
+                      </Button>
+                    );
+                  })}
 
                 </div>
 

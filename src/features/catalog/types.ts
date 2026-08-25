@@ -5,6 +5,8 @@ export interface Product {
 
   composition: string | null;
 
+  unavailableSizes: string[];
+
   name: string;
 
   slug: string;
