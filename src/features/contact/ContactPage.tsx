@@ -252,7 +252,7 @@ export function ContactPage() {
 
                     <section className="mx-auto mt-16 max-w-2xl text-center lg:mt-24">
 
-                        <div className="mx-auto h-px w-20 bg-black" />
+                        <div className="mx-auto h-px w-20 bg-primary" />
 
                         <h2
                             className="
