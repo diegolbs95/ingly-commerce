@@ -17,7 +17,7 @@ const categories = [
   },
   {
     name: "Partes de Cima",
-    image: "/images/categories/jaquetas.jpg",
+    image: "/images/categories/partesdecima.jpg",
     href: "/catalogo?categoria=partes-de-cima",
   },
   {
