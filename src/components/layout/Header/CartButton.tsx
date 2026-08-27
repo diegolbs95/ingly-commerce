@@ -57,25 +57,25 @@ export function CartButton() {
         {hydrated && totalItems > 0 && (
           <span
             className="
-    absolute
-    right-0
-    top-0.5
-    z-50
-    flex
-    h-[18px]
-    w-[18px]
-    translate-x-1/2
-    -translate-y-1/2
-    items-center
-    justify-center
-    rounded-full
-    bg-primary
-    text-[9px]
-    font-bold
-    text-white
-    ring-2
-    ring-white
-  "
+              absolute
+              right-0
+              top-0.5
+              z-50
+              flex
+              h-[18px]
+              w-[18px]
+              translate-x-1/2
+              -translate-y-1/2
+              items-center
+              justify-center
+              rounded-full
+              bg-primary
+              text-[9px]
+              font-bold
+              text-white
+              ring-2
+              ring-background
+            "
           >
             {totalItems}
           </span>

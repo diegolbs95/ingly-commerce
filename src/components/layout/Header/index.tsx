@@ -14,9 +14,8 @@ export function Header() {
         w-full
         border-b
         border-border/60
-        bg-white/95
+        bg-background/95
         backdrop-blur-md
-        shadow-[0_1px_8px_rgba(0,0,0,0.04)]
         transition-all
         duration-300
       "
