@@ -242,8 +242,8 @@ export function ProductPage({
                               ${unavailable
                             ? "cursor-not-allowed border-gray-200 bg-gray-100 text-gray-400 opacity-70"
                             : selectedSize === size
-                              ? "border-black bg-black text-white hover:bg-black hover:text-white"
-                              : "border-gray-300 bg-white text-black hover:border-black hover:bg-white"
+                              ? "border-primary bg-primary text-white hover:bg-primary hover:text-white"
+                              : "border-gray-300 bg-white text-foreground hover:border-primary hover:bg-white"
                           }
                        `}
                         >

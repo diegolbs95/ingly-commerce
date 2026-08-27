@@ -205,7 +205,7 @@ export function ProductGallery({
                                 rounded-full
                                 transition-all
                                 ${selectedIndex === index
-                                    ? "bg-black"
+                                    ? "bg-primary"
                                     : "bg-gray-300"
                                 }
                             `}

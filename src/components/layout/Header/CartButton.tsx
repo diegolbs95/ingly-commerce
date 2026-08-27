@@ -69,7 +69,7 @@ export function CartButton() {
     items-center
     justify-center
     rounded-full
-    bg-black
+    bg-primary
     text-[9px]
     font-bold
     text-white

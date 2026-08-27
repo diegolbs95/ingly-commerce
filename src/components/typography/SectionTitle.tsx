@@ -28,7 +28,7 @@ export function SectionTitle({
 
       <div
         className={cn(
-          "mt-4 h-[2px] w-16 bg-black",
+          "mt-4 h-[2px] w-16 bg-primary",
           centered ? "mx-auto" : "",
         )}
       />

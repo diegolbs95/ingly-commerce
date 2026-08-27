@@ -23,14 +23,14 @@ tracking-[0.18em]
 text-foreground
 transition-all
 duration-300
-hover:text-black
+hover:text-primary
 after:absolute
 after:-bottom-2
 after:left-1/2
 after:h-[2px]
 after:w-0
 after:-translate-x-1/2
-after:bg-black
+after:bg-primary
 after:transition-all
 after:duration-300
 hover:after:w-full

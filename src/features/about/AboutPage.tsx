@@ -31,7 +31,7 @@ export function AboutPage() {
             className="object-cover object-center"
           />
 
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-primary/30" />
 
           <Container>
 
@@ -358,7 +358,7 @@ export function AboutPage() {
                 Ingly
               </h2>
 
-              <div className="mx-auto mt-5 h-px w-16 bg-black lg:mt-6 lg:w-20" />
+              <div className="mx-auto mt-5 h-px w-16 bg-primary lg:mt-6 lg:w-20" />
 
               <p
                 className="
