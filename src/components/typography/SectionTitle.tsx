@@ -22,7 +22,7 @@ export function SectionTitle({
         className,
       )}
     >
-      <h2 className="text-2xl font-bold uppercase tracking-[0.15em] lg:text-3xl">
+      <h2 className="font-editorial text-3xl font-semibold uppercase tracking-[0.12em] lg:text-4xl">
         {title}
       </h2>
 

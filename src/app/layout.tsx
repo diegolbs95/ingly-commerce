@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
+
 import { siteConfig } from "@/config/site";
 import { Toaster } from "sonner";
 
@@ -8,6 +9,12 @@ import "./globals.css";
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${manrope.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
+        className={`${manrope.variable} ${cormorant.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
       >
         {children}
 

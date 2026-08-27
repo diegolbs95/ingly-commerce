@@ -87,20 +87,21 @@ export function ProductCard({
               lg:p-6
             "
           >
-          <h3
-            className="
-              mb-1
-              text-base
-              font-semibold
-              leading-tight
-              tracking-tight
-              transition-colors
-              duration-300
-              group-hover:text-primary
-              lg:mb-3
-              lg:text-[1.15rem]
-            "
-          >
+            <h3
+              className="
+                mb-1
+                text-base
+                font-semibold
+                leading-tight
+                tracking-tight
+                text-primary
+                transition-opacity
+                duration-300
+                group-hover:opacity-80
+                lg:mb-3
+                lg:text-[1.15rem]
+              "
+            >
             {product.name}
           </h3>
 
@@ -127,19 +128,19 @@ export function ProductCard({
             >
 
               <span
-                className="
-                  text-lg
-                  font-semibold
-                  tracking-tight
-                  text-foreground
-                  lg:text-xl
-                "
-              >
-                {product.price.toLocaleString("pt-BR", {
-                  style: "currency",
-                  currency: "BRL",
-                })}
-              </span>
+              className="
+                text-lg
+                font-semibold
+                tracking-tight
+                text-foreground
+                lg:text-xl
+              "
+            >
+              {product.price.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </span>
 
               {product.wholesalePrice && (
 

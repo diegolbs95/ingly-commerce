@@ -29,7 +29,7 @@ export function Hero() {
 
         <div className="mx-auto w-full max-w-7xl px-6">
 
-          <div className="max-w-2xl text-white">
+          <div className="max-w-3xl text-white">
 
             <span className="text-sm font-semibold uppercase tracking-[0.35em] text-white/80">
               Nova Coleção
@@ -38,11 +38,12 @@ export function Hero() {
             <h1
               className="
                 mt-8
-                text-4xl
-                font-extrabold
-                leading-[1.08]
-                sm:text-5xl
-                lg:text-7xl
+                font-editorial
+                text-5xl
+                font-semibold
+                leading-[0.95]
+                sm:text-6xl
+                lg:text-8xl
               "
             >
 
