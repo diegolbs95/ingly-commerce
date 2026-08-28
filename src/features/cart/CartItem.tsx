@@ -48,7 +48,13 @@ export function CartItem({
         gap-5
         rounded-2xl
         border
+        border-border/70
+        bg-card
         p-5
+        shadow-sm
+        transition-shadow
+        duration-300
+        hover:shadow-md
         sm:flex-row
         lg:gap-6
         lg:p-6
@@ -59,42 +65,81 @@ export function CartItem({
           relative
           h-28
           w-20
-          sm:h-36
-          sm:w-28
+          shrink-0
           overflow-hidden
           rounded-xl
           border
+          border-border/60
           bg-secondary
-          shrink-0
+          sm:h-36
+          sm:w-28
         "
       >
         <Image
           src={item.image}
           alt={item.name}
           fill
-          className="object-cover"
+          className="
+            object-cover
+            transition-transform
+            duration-500
+            ease-out
+            hover:scale-[1.02]
+          "
         />
       </div>
 
       <div className="flex flex-1 flex-col justify-between">
         <div>
-          <h3 className="text-lg lg:text-xl font-semibold">
+          <h3
+            className="
+              text-lg
+              font-semibold
+              tracking-tight
+              text-foreground
+              transition-colors
+              duration-300
+              hover:text-primary
+              lg:text-xl
+            "
+          >
             {item.name}
           </h3>
 
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p
+            className="
+              mt-2
+              text-sm
+              text-muted-foreground
+            "
+          >
             Ref.: {item.reference}
           </p>
 
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p
+            className="
+              mt-2
+              text-sm
+              text-muted-foreground
+            "
+          >
             Tam. {item.size}
           </p>
 
           <p
             className={
               wholesale
-                ? "mt-3 text-sm font-medium text-emerald-700"
-                : "mt-3 text-sm text-muted-foreground"
+                ? `
+                  mt-3
+                  text-sm
+                  font-medium
+                  text-emerald-700
+                `
+                : `
+                  mt-3
+                  text-sm
+                  text-muted-foreground
+                `
             }
           >
             {wholesale
@@ -105,8 +150,17 @@ export function CartItem({
           <p
             className={
               wholesale
-                ? "text-lg font-bold text-emerald-700"
-                : "text-lg font-semibold"
+                ? `
+                  text-lg
+                  font-semibold
+                  text-emerald-700
+                `
+                : `
+                  text-lg
+                  font-semibold
+                  tracking-tight
+                  text-primary
+                `
             }
           >
             {unitPrice.toLocaleString(
@@ -118,27 +172,74 @@ export function CartItem({
             )}
           </p>
 
-          <p className="mt-4 text-sm text-muted-foreground">
-            Subtotal
-          </p>
+          <div
+            className="
+              mt-4
+              border-t
+              border-border/60
+              pt-4
+            "
+          >
+            <p
+              className="
+                text-sm
+                text-muted-foreground
+              "
+            >
+              Subtotal
+            </p>
 
-          <p className="text-base lg:text-lg font-semibold">
-            {(unitPrice * item.quantity).toLocaleString(
-              "pt-BR",
-              {
-                style: "currency",
-                currency: "BRL",
-              },
-            )}
-          </p>
+            <p
+              className="
+                text-base
+                font-semibold
+                tracking-tight
+                text-foreground
+                lg:text-lg
+              "
+            >
+              {(unitPrice * item.quantity).toLocaleString(
+                "pt-BR",
+                {
+                  style: "currency",
+                  currency: "BRL",
+                },
+              )}
+            </p>
+          </div>
         </div>
 
-        <div className="mt-5 lg:mt-6 flex items-center justify-between">
-          <div className="flex items-center gap-2 lg:gap-3">
+        <div
+          className="
+            mt-5
+            flex
+            items-center
+            justify-between
+            lg:mt-6
+          "
+        >
+          <div
+            className="
+              flex
+              items-center
+              gap-2
+              lg:gap-3
+            "
+          >
             <Button
               size="icon"
               variant="outline"
-              className="h-10 w-10"
+              className="
+                h-10
+                w-10
+                border-border
+                text-foreground
+                transition-colors
+                duration-200
+                hover:border-primary/40
+                hover:bg-secondary
+                hover:text-primary
+              "
               onClick={() =>
                 decreaseQuantity(
                   item.id,
@@ -149,14 +250,33 @@ export function CartItem({
               <Minus className="h-4 w-4" />
             </Button>
 
-            <span className="w-10 text-center text-base lg:text-lg font-semibold">
+            <span
+              className="
+                w-10
+                text-center
+                text-base
+                font-semibold
+                text-foreground
+                lg:text-lg
+              "
+            >
               {item.quantity}
             </span>
 
             <Button
               size="icon"
               variant="outline"
-              className="h-10 w-10"
+              className="
+                h-10
+                w-10
+                border-border
+                text-foreground
+                transition-colors
+                duration-200
+                hover:border-primary/40
+                hover:bg-secondary
+                hover:text-primary
+              "
               onClick={() =>
                 increaseQuantity(
                   item.id,
@@ -172,6 +292,11 @@ export function CartItem({
             variant="ghost"
             size="icon"
             aria-label="Remover produto"
+            className="
+              transition-colors
+              duration-200
+              hover:bg-destructive/10
+            "
             onClick={() =>
               removeItem(
                 item.id,
@@ -179,7 +304,13 @@ export function CartItem({
               )
             }
           >
-            <Trash2 className="h-5 w-5 text-destructive" />
+            <Trash2
+              className="
+                h-5
+                w-5
+                text-destructive
+              "
+            />
           </Button>
         </div>
       </div>

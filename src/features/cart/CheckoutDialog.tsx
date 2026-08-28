@@ -5,7 +5,7 @@ import { useState } from "react";
 import {
   AlertDialog,
   AlertDialogContent,
-  AlertDialogHeader, 
+  AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogFooter,
   AlertDialogTrigger,
@@ -35,81 +35,173 @@ export function CheckoutDialog() {
 
     const message = buildWhatsAppMessage(
       items,
-      payment
+      payment,
     );
 
     window.open(
       `https://wa.me/${number}?text=${message}`,
-      "_blank"
+      "_blank",
     );
   }
 
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-
         <Button
           size="lg"
-          className="w-full"
+          className="
+            w-full
+            rounded-xl
+          "
         >
           Finalizar Pedido
         </Button>
-
       </AlertDialogTrigger>
 
-      <AlertDialogContent>
-
+      <AlertDialogContent
+        className="
+          rounded-2xl
+          border-border
+          bg-background
+          p-6
+          shadow-lg
+          sm:max-w-md
+        "
+      >
         <AlertDialogHeader>
-
-          <AlertDialogTitle>
+          <AlertDialogTitle
+            className="
+              text-xl
+              font-semibold
+              text-foreground
+            "
+          >
             Forma de pagamento
           </AlertDialogTitle>
-
         </AlertDialogHeader>
 
         <RadioGroup
           value={payment}
           onValueChange={setPayment}
+          className="mt-2 gap-3"
         >
+          <div
+            className="
+              flex
+              items-center
+              gap-3
+              rounded-xl
+              border
+              border-border
+              bg-background
+              px-4
+              py-3
+              transition-colors
+              hover:bg-secondary
+            "
+          >
+            <RadioGroupItem
+              value="PIX"
+              id="pix"
+              className="border-primary text-primary"
+            />
 
-          <div className="flex items-center gap-3">
-
-            <RadioGroupItem value="PIX" id="pix" />
-
-            <Label htmlFor="pix">PIX</Label>
-
+            <Label
+              htmlFor="pix"
+              className="
+                flex-1
+                cursor-pointer
+                text-sm
+                font-medium
+                text-foreground
+              "
+            >
+              PIX
+            </Label>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div
+            className="
+              flex
+              items-center
+              gap-3
+              rounded-xl
+              border
+              border-border
+              bg-background
+              px-4
+              py-3
+              transition-colors
+              hover:bg-secondary
+            "
+          >
+            <RadioGroupItem
+              value="Cartão"
+              id="cartao"
+              className="border-primary text-primary"
+            />
 
-            <RadioGroupItem value="Cartão" id="cartao" />
-
-            <Label htmlFor="cartao">
+            <Label
+              htmlFor="cartao"
+              className="
+                flex-1
+                cursor-pointer
+                text-sm
+                font-medium
+                text-foreground
+              "
+            >
               Cartão
             </Label>
-
           </div>
 
-          <div className="flex items-center gap-3">
+          <div
+            className="
+              flex
+              items-center
+              gap-3
+              rounded-xl
+              border
+              border-border
+              bg-background
+              px-4
+              py-3
+              transition-colors
+              hover:bg-secondary
+            "
+          >
+            <RadioGroupItem
+              value="Dinheiro"
+              id="dinheiro"
+              className="border-primary text-primary"
+            />
 
-            <RadioGroupItem value="Dinheiro" id="dinheiro" />
-
-            <Label htmlFor="dinheiro">
+            <Label
+              htmlFor="dinheiro"
+              className="
+                flex-1
+                cursor-pointer
+                text-sm
+                font-medium
+                text-foreground
+              "
+            >
               Dinheiro
             </Label>
-
           </div>
-
         </RadioGroup>
 
-        <AlertDialogFooter>
-
-          <Button onClick={finishOrder}>
+        <AlertDialogFooter className="mt-4">
+          <Button
+            onClick={finishOrder}
+            className="
+              w-full
+              rounded-xl
+            "
+          >
             Enviar para WhatsApp
           </Button>
-
         </AlertDialogFooter>
-
       </AlertDialogContent>
     </AlertDialog>
   );

@@ -48,34 +48,60 @@ export function CartSummary({
       className="
         rounded-2xl
         border
-        bg-background
+        border-border/70
+        bg-card
         p-5
-        lg:p-6
+        shadow-sm
         lg:sticky
         lg:top-24
+        lg:p-6
       "
     >
-      <h2 className="text-xl font-semibold">
+      <h2
+        className="
+          text-xl
+          font-semibold
+          tracking-tight
+          text-foreground
+        "
+      >
         Resumo do Pedido
       </h2>
 
-      <div className="mt-5 space-y-4 lg:mt-6 lg:space-y-5">
+      <div
+        className="
+          mt-6
+          space-y-5
+        "
+      >
         <div className="flex items-center justify-between">
-          <span className="text-muted-foreground">
+          <span className="text-sm text-muted-foreground">
             Itens
           </span>
 
-          <span className="font-medium">
+          <span
+            className="
+              text-sm
+              font-medium
+              text-foreground
+            "
+          >
             {totalItems}
           </span>
         </div>
 
         <div className="flex items-center justify-between">
-          <span className="text-muted-foreground">
+          <span className="text-sm text-muted-foreground">
             Subtotal
           </span>
 
-          <span className="font-medium">
+          <span
+            className="
+              text-sm
+              font-medium
+              text-foreground
+            "
+          >
             {subtotal.toLocaleString(
               "pt-BR",
               {
@@ -86,13 +112,33 @@ export function CartSummary({
           </span>
         </div>
 
-        <div className="border-t pt-5">
+        <div
+          className="
+            border-t
+            border-border/70
+            pt-5
+          "
+        >
           <div className="flex items-center justify-between">
-            <span className="text-lg font-semibold">
+            <span
+              className="
+                text-base
+                font-semibold
+                text-foreground
+              "
+            >
               Total
             </span>
 
-            <span className="text-xl lg:text-2xl font-bold">
+            <span
+              className="
+                text-xl
+                font-semibold
+                tracking-tight
+                text-primary
+                lg:text-2xl
+              "
+            >
               {subtotal.toLocaleString(
                 "pt-BR",
                 {
@@ -105,19 +151,17 @@ export function CartSummary({
         </div>
 
         {wholesale ? (
-
           <div
             className="
               mt-4
-              rounded-lg
+              rounded-xl
               border
-              border-emerald-200
-              bg-emerald-50
+              border-emerald-200/70
+              bg-emerald-50/70
               px-4
               py-3
             "
           >
-
             <p
               className="
                 text-sm
@@ -127,55 +171,75 @@ export function CartSummary({
             >
               ✓ Preço de atacado aplicado.
             </p>
-
           </div>
-
         ) : (
-
           <div
             className="
               mt-4
-              rounded-lg
+              rounded-xl
               border
-              border-border
+              border-border/70
               bg-muted/40
               px-4
               py-3
             "
           >
-
-            <p className="text-sm text-muted-foreground">
-
-              Faltam {" "}
-
+            <p
+              className="
+                text-sm
+                leading-6
+                text-muted-foreground
+              "
+            >
+              Faltam{" "}
               <span className="font-semibold text-foreground">
                 {WHOLESALE_MIN_ITEMS - totalItems}
-              </span>
-
-              {" "}peças para liberar o
-
-              {" "}
-
+              </span>{" "}
+              peças para liberar o{" "}
               <span className="font-semibold text-wholesale">
                 preço de atacado
-              </span>.
-
+              </span>
+              .
             </p>
-
           </div>
-
         )}
       </div>
 
-      <div className="mt-6 lg:mt-8 rounded-xl bg-secondary p-4 text-sm text-muted-foreground">
+      <div
+        className="
+          mt-6
+          rounded-xl
+          bg-secondary
+          p-4
+          text-sm
+          leading-6
+          text-muted-foreground
+          lg:mt-8
+        "
+      >
         O frete será informado durante o atendimento pelo WhatsApp.
       </div>
 
-      <div className="mt-6 lg:mt-8 space-y-3">
+      <div
+        className="
+          mt-6
+          space-y-3
+          lg:mt-8
+        "
+      >
         <Button
           asChild
           variant="outline"
-          className="h-11 w-full"
+          className="
+            h-11
+            w-full
+            border-border
+            text-foreground
+            transition-colors
+            hover:border-primary/30
+            hover:bg-secondary
+            hover:text-primary
+          "
         >
           <Link href="/catalogo">
             Continuar Comprando
@@ -184,7 +248,14 @@ export function CartSummary({
 
         <Button
           asChild
-          className="h-11 w-full"
+          className="
+            h-11
+            w-full
+            bg-primary
+            text-primary-foreground
+            transition-colors
+            hover:bg-primary/90
+          "
         >
           <Link href="/checkout">
             Finalizar Pedido

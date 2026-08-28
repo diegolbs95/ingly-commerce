@@ -14,81 +14,121 @@ export function PaymentMethod({
 }: Readonly<PaymentMethodProps>) {
   return (
     <div className="space-y-6">
-
-      <h3 className="text-lg font-semibold">
+      <h3
+        className="
+          text-lg
+          font-semibold
+          tracking-tight
+          text-foreground
+        "
+      >
         Forma de pagamento
       </h3>
 
-      <label
-        className={`
-          flex
-          cursor-pointer
-          items-center
-          gap-4
-          rounded-xl
-          border
-          p-4
-          transition-all
-          ${
-            value === "pix"
-              ? "border-primary bg-secondary"
-              : "hover:bg-secondary"
-          }
-        `}
-      >
-        <input
-          type="radio"
-          name="payment"
-          value="pix"
-          checked={value === "pix"}
-          onChange={() => onChange("pix")}
-          className="h-4 w-4"
-        />
+      <div className="space-y-3">
+        <label
+          className={`
+            flex
+            min-h-16
+            cursor-pointer
+            items-center
+            gap-4
+            rounded-xl
+            border
+            px-4
+            transition-all
+            duration-300
+            ${
+              value === "pix"
+                ? "border-primary bg-secondary"
+                : "border-border hover:border-primary/40 hover:bg-secondary/60"
+            }
+          `}
+        >
+          <input
+            type="radio"
+            name="payment"
+            value="pix"
+            checked={value === "pix"}
+            onChange={() => onChange("pix")}
+            className="
+              h-4
+              w-4
+              accent-primary
+            "
+          />
 
-        <span className="font-medium">
-          PIX
-        </span>
+          <span
+            className="
+              text-sm
+              font-medium
+              text-foreground
+            "
+          >
+            PIX
+          </span>
+        </label>
 
-      </label>
+        <label
+          className={`
+            flex
+            min-h-16
+            cursor-pointer
+            items-center
+            gap-4
+            rounded-xl
+            border
+            px-4
+            transition-all
+            duration-300
+            ${
+              value === "credit"
+                ? "border-primary bg-secondary"
+                : "border-border hover:border-primary/40 hover:bg-secondary/60"
+            }
+          `}
+        >
+          <input
+            type="radio"
+            name="payment"
+            value="credit"
+            checked={value === "credit"}
+            onChange={() =>
+              onChange("credit")
+            }
+            className="
+              h-4
+              w-4
+              accent-primary
+            "
+          />
 
-      <label
-        className={`
-          flex
-          cursor-pointer
-          items-center
-          gap-4
-          rounded-xl
-          border
-          p-4
-          transition-all
-          ${
-            value === "credit"
-              ? "border-primary bg-secondary"
-              : "hover:bg-secondary"
-          }
-        `}
-      >
-        <input
-          type="radio"
-          name="payment"
-          value="credit"
-          checked={value === "credit"}
-          onChange={() => onChange("credit")}
-          className="h-4 w-4"
-        />
-
-        <span className="font-medium">
-          Cartão de Crédito
-        </span>
-
-      </label>
-
-      <div className="rounded-xl bg-secondary p-4 text-sm text-muted-foreground">
-
-        O valor do frete será informado durante o atendimento pelo WhatsApp.
-
+          <span
+            className="
+              text-sm
+              font-medium
+              text-foreground
+            "
+          >
+            Cartão de Crédito
+          </span>
+        </label>
       </div>
 
+      <div
+        className="
+          rounded-xl
+          bg-secondary
+          px-4
+          py-4
+          text-sm
+          leading-6
+          text-muted-foreground
+        "
+      >
+        O valor do frete será informado
+        durante o atendimento pelo WhatsApp.
+      </div>
     </div>
   );
 }
